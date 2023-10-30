@@ -1,0 +1,48 @@
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Adjust the width as needed */
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .carousel-slide {
+    display: none;
+    width: 100%;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .carousel-controls {
+    text-align: center;
+  }
+  
+  .prev-button, .next-button {
+    background: #333;
+    color: #fff;
+    padding: 8px 16px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .carousel-indicators {
+    text-align: center;
+  }
+  
+  .indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #888;
+    margin: 0 6px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .active {
+    background: #333;
+  }
