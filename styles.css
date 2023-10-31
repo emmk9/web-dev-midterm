@@ -1,6 +1,6 @@
 .container {
-    width: 675px; 
-    height: 435px; 
+    width: 1000px; 
+    height: 500px; 
     margin: 0 auto; 
     position: relative;
   }
@@ -8,14 +8,15 @@
   .tall-div {
     width: 100%;
     height: 100%;
-    background-color: lightgray;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
   
   .carousel-container {
     width: 100%;
+    overflow: hidden;
   }
   .carousel-slide {
     display: none;
@@ -39,21 +40,4 @@
     cursor: pointer;
     border: none;
   }
-  
-  .carousel-indicators {
-    text-align: center;
-  }
-  
-  .indicator {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    background: #888;
-    margin: 0 6px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
-  .active {
-    background: #333;
-  }
+    
