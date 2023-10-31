@@ -40,4 +40,12 @@
     cursor: pointer;
     border: none;
   }
-    
+
+  body{
+    padding-left: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .custom-bg-light-gray {
+    background-color: #c7bfbf; /* Use the desired hex color code for a lighter gray */
+  }
