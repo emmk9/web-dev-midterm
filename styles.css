@@ -1,46 +1,48 @@
 .container {
-    width: 1000px; 
-    height: 500px; 
-    margin: 0 auto; 
-    position: relative;
-  }
-  
-  .tall-div {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  
-  .carousel-container {
-    width: 100%;
-    overflow: hidden;
-  }
-  .carousel-slide {
-    display: none;
-    width: 100%;
-  }
-  
-  img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .carousel-controls {
-    text-align: center;
-  }
-  
-  .prev-button, .next-button {
-    background: #333;
-    color: #fff;
-    padding: 8px 16px;
-    margin: 10px;
-    cursor: pointer;
-    border: none;
-  }
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 20px;
+}
 
+.tall-div {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+  
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.carousel-slide {
+  display: none;
+  width: 100%;
+}
+.car_images {
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+.carousel-controls {
+  margin-top: 10px;
+  text-align: center;
+}
+.prev-button,
+.next-button {
+  background: #333;
+  color: #fff;
+  padding: 8px 16px;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+}
   body{
     padding-left: 40px;
     padding-top: 50px;
@@ -49,3 +51,16 @@
   .custom-bg-light-gray {
     background-color: #c7bfbf;
   }
+
+  .footer-container {
+    position: relative;
+    z-index: 2;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-controls {
+      margin-top: 50px;
+    }
+  }
+  
