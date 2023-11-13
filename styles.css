@@ -47,7 +47,6 @@
   border: none;
 }
   body{
-    padding-left: 40px;
     padding-top: 50px;
     padding-bottom: 50px;
   }
@@ -63,7 +62,8 @@
   
   @media (max-width: 768px) {
     .carousel-controls {
-      margin-top: 50px;
+      position: relative;
+      top: -225px
     }
   }
   
