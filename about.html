@@ -44,20 +44,28 @@
   </header>
         <div class="container">
             <div class="tall-div">
-              <div class="carousel-container">
-                <div class="carousel-slide">
-                  <img class="car_images" src="image1.jpg" alt="Image 1">
+              <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="image1.jpg" alt="Image 1">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="image2.jpg" alt="Image 2">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="image3.jpg" alt="Image 3">
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
                 </div>
-                <div class="carousel-slide">
-                  <img class="car_images" src="image2.jpg" alt="Image 2">
-                </div>
-                <div class="carousel-slide">
-                  <img class="car_images" src="image3.jpg" alt="Image 3">
-                </div>
-                <div class="carousel-controls">
-                  <button class="prev-button">Previous</button>
-                  <button class="next-button">Next</button>
-              </div> 
+              </div>
+              </div>
               <div class="row mt-3">
                 <div class="col-lg-6">
                   <div class="card">
@@ -77,7 +85,6 @@
                     </div>
                   </div>
                 </div>
-              </div>
               </div>
             </div>
           </div>
