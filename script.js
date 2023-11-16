@@ -1,107 +1,108 @@
 // Wait for the DOM to be ready before running any jQuery code
 
-$(document).ready(function () {
+$(document).ready(function() {
 
-    // Event listener for form submission
+	// Event listener for form submission
 
-    $('#courseForm').on('submit', function (e) {
+	$('#courseForm').on('submit', function(e) {
 
-        // Prevents the default form submission action
+		// Prevents the default form submission action
 
-        e.preventDefault();
+		e.preventDefault();
 
-        // Retrieves values entered by the user in the form
+		// Retrieves values entered by the user in the form
 
-        const courseId = $('#courseId').val();
-        const title = $('#title').val();
-        let grade = $('#grade').val();
+		const courseId = $('#courseId').val();
+		const title = $('#title').val();
+		let grade = $('#grade').val();
 
-        // Validates the grade input
+		// Validates the grade input
 
-        grade = parseInt(grade);
-        if (isNaN(grade) || grade < 0 || grade > 100) {
-            alert('Grade must be an integer between 0 and 100.');
+		grade = parseInt(grade);
+		if (isNaN(grade) || grade < 0 || grade > 100) {
+			alert('Grade must be an integer between 0 and 100.');
 
 			// Exits the function if validation fails
 
-            return;
-        }
+			return;
+		}
 
-        // Creates a new table row with the course information
+		// Creates a new table row with the course information
 
-        const row = `
-            <tr>
-                <td>${courseId}</td>
-                <td>${title}</td>
-                <td>${grade}</td>
-                <td><button class="btn btn-danger removeBtn">Remove</button></td>
-            </tr>
-        `;
+		const row = `
+		<tr>
+		  <td>${courseId}</td>
+		  <td>${title}</td>
+		  <td>${grade}</td>
+		  <td><button class="btn btn-danger removeBtn">Remove</button></td>
+		</tr>
+	  `;
 
-        // Appends the new row to the course table
+		// Appends the new row to the course table
 
-        $('#courseTableBody').append(row);
+		$('#courseTableBody').append(row);
 
-        // Clears the form fields for new inputs
+		// Clears the form fields for new inputs
 
-        $('#courseId').val('');
-        $('#title').val('');
-        $('#grade').val('');
-    });
+		$('#courseId').val('');
+		$('#title').val('');
+		$('#grade').val('');
+	});
 
-    // Event listener for the Remove button in each course row
+	// Event listener for the Remove button in each course row
 
-    $('#courseTableBody').on('click', '.removeBtn', function () {
+	$('#courseTableBody').on('click', '.removeBtn', function() {
 
-        // Removes the closest table row (the course row) when the Remove button is clicked
+		// Removes the closest table row (the course row) when the Remove button is clicked
 
 		$(this).closest('tr').remove();
-    });
+	});
 
-    // Function to sort the grades
+	// Sort grades function
 
-    function sortGrades() {
+	function sortGrades() {
 
-        // Retrieves all table rows
+		// Retrieves all table rows
 
-        const rows = $('#courseTableBody tr').get();
+		const rows = $('#courseTableBody tr').get();
 
-        // Sorts rows based on the grade values in descending order
+		// Sorts rows based on the grade values in descending order
 
-        rows.sort(function (a, b) {
-            const gradeA = parseInt($(a).children('td').eq(2).text());
-            const gradeB = parseInt($(b).children('td').eq(2).text());
-            return gradeB - gradeA;
-        });
+		rows.sort(function(a, b) {
+			const gradeA = parseInt($(a).children('td').eq(2).text());
+			const gradeB = parseInt($(b).children('td').eq(2).text());
 
-        // Re-adds the sorted rows to the table
+			return gradeB - gradeA;
+		});
 
-        $.each(rows, function (index, row) {
-            $('#courseTableBody').append(row);
-        });
-    }
+		// Re-adds the sorted rows to the table
 
-    // Event listener for the Sort button
+		$.each(rows, function(index, row) {
+			$('#courseTableBody').append(row);
+		});
+	}
 
-    $('#sortButton').on('click', function () {
+	// Sort button click event
 
-        // Calls the sortGrades function when the Sort button is clicked
-	    
-        sortGrades();
-    });
+	$('#sortButton').on('click', function() {
+		sortGrades();
+	});
 });
+
 
 // Sticky Header
 
-window.onscroll = function() { makeSticky(); };
+window.onscroll = function() {
+	makeSticky();
+};
 
 var header = document.getElementById("myHeader");
 var sticky = header.offsetTop;
 
 function makeSticky() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
+	if (window.pageYOffset > sticky) {
+		header.classList.add("sticky");
+	} else {
+		header.classList.remove("sticky");
+	}
 }
