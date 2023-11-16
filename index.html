@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="School Website - Fall Semester 2023 Student Program">
+	<meta name="keywords" content="school, website, home, fall, semester, 2023, student, program">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Fall Semester 2023 Student Program Home</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="styles.css">
+	<script defer src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script defer src="script.js"></script>
+</head>
+
+<!-- Body -->
+
+<body class="custom-bg-light-gray">
+
+	<!-- Header -->
+
+	<header id="myHeader">
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-light my-sticky-nav">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">
+					<img src="images/school.png" alt="Logo" width="70" height="70"
+						class="d-inline-block align-text-top">
+					School Website
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<a class="nav-link active me-3" href="index.html">Home</a>
+					<a class="nav-link" href="about.html">About</a>
+				</div>
+			</div>
+		</nav>
+
+	</header>
+
+	<!-- Main -->
+
+	<main class="container mt-3">
+
+		<!-- Course Program Text -->
+
+		<div class="mb-4">
+			<h2>Course Program</h2>
+			<p class="lead">
+				Welcome to our school's course program.
+				Here, students can add courses to their schedule and view the list of courses they have selected.
+				This interactive platform is designed to make the process of viewing the course program easy and user-friendly.
+				Students can browse through a comprehensive list of courses, each detailed with information such as Course ID, Course Title and Course Grade.
+				Once selected, courses are added to a personalized schedule, allowing students to plan their academic term effectively.
+			</p>
+		</div>
+
+
+		<!-- Course Form Input -->
+
+		<form id="courseForm" class="mb-3">
+			<div class="row">
+				<div class="col">
+					<label for="courseId" class="form-label"><strong>Course ID:</strong></label>
+					<input type="text" class="form-control" id="courseId" placeholder="Course ID" required>
+				</div>
+				<div class="col">
+					<label for="title" class="form-label"><strong>Course Title:</strong></label>
+					<input type="text" class="form-control" id="title" placeholder="Course Title" required>
+				</div>
+				<div class="col">
+					<label for="grade" class="form-label"><strong>Course Grade:</strong></label>
+					<input type="text" class="form-control" id="grade" placeholder="Course Grade" required>
+				</div>
+				<div class="col-auto align-self-end">
+					<button type="submit" class="btn btn-primary">Add</button>
+				</div>
+			</div>
+		</form>
+
+		<!-- Sort Button -->
+
+		<button id="sortButton" class="btn btn-secondary mb-3">Sort Grades</button>
+
+		<!-- Course List Table -->
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Course ID</th>
+					<th scope="col">Course Title</th>
+					<th scope="col">Course Grade</th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+			<tbody id="courseTableBody">
+			</tbody>
+		</table>
+
+	</main>
+
+	<!-- Footer -->
+
+	<footer class="bg-light text-center text-lg-start mt-3">
+		<div class="container p-4">
+			<div class="row">
+				<div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+					<img src="images/school.png" alt="Logo" width="40" height="40"
+						class="d-inline-block align-text-top">
+					School Website
+				</div>
+
+				<div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+					<p>Copyright © 2023 School Website</p>
+					<p>Contact: info@schoolwebsite.edu</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</body>
+
+</html>
