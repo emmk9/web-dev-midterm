@@ -1,35 +1,20 @@
-// Wait for the DOM to be ready before running any jQuery code
+$(document).ready(function () {
+	$('#courseForm').on('submit', function (e) {
+	  e.preventDefault();
 
-$(document).ready(function() {
+	  const courseId = $('#courseId').val();
+	  const title = $('#title').val();
+	  let grade = $('#grade').val();
 
-	// Event listener for form submission
+	  // Input validation for grade
+	  
+	  grade = parseInt(grade);
+	  if (isNaN(grade) || grade < 0 || grade > 100) {
+		alert('Grade must be an integer between 0 and 100.');
+		return;
+	  }
 
-	$('#courseForm').on('submit', function(e) {
-
-		// Prevents the default form submission action
-
-		e.preventDefault();
-
-		// Retrieves values entered by the user in the form
-
-		const courseId = $('#courseId').val();
-		const title = $('#title').val();
-		let grade = $('#grade').val();
-
-		// Validates the grade input
-
-		grade = parseInt(grade);
-		if (isNaN(grade) || grade < 0 || grade > 100) {
-			alert('Grade must be an integer between 0 and 100.');
-
-			// Exits the function if validation fails
-
-			return;
-		}
-
-		// Creates a new table row with the course information
-
-		const row = `
+	  const row = `
 		<tr>
 		  <td>${courseId}</td>
 		  <td>${title}</td>
@@ -38,71 +23,55 @@ $(document).ready(function() {
 		</tr>
 	  `;
 
-		// Appends the new row to the course table
+	  $('#courseTableBody').append(row);
 
-		$('#courseTableBody').append(row);
+	  // Clear input fields
 
-		// Clears the form fields for new inputs
-
-		$('#courseId').val('');
-		$('#title').val('');
-		$('#grade').val('');
+	  $('#courseId').val('');
+	  $('#title').val('');
+	  $('#grade').val('');
 	});
 
-	// Event listener for the Remove button in each course row
-
-	$('#courseTableBody').on('click', '.removeBtn', function() {
-
-		// Removes the closest table row (the course row) when the Remove button is clicked
-
-		$(this).closest('tr').remove();
+	$('#courseTableBody').on('click', '.removeBtn', function () {
+	  $(this).closest('tr').remove();
 	});
 
 	// Sort grades function
 
 	function sortGrades() {
+	  const rows = $('#courseTableBody tr').get();
 
-		// Retrieves all table rows
+	  rows.sort(function (a, b) {
+		const gradeA = parseInt($(a).children('td').eq(2).text());
+		const gradeB = parseInt($(b).children('td').eq(2).text());
 
-		const rows = $('#courseTableBody tr').get();
+		return gradeB - gradeA;
+	  });
 
-		// Sorts rows based on the grade values in descending order
-
-		rows.sort(function(a, b) {
-			const gradeA = parseInt($(a).children('td').eq(2).text());
-			const gradeB = parseInt($(b).children('td').eq(2).text());
-
-			return gradeB - gradeA;
-		});
-
-		// Re-adds the sorted rows to the table
-
-		$.each(rows, function(index, row) {
-			$('#courseTableBody').append(row);
-		});
+	  $.each(rows, function (index, row) {
+		$('#courseTableBody').append(row);
+	  });
 	}
 
 	// Sort button click event
 
-	$('#sortButton').on('click', function() {
-		sortGrades();
+	$('#sortButton').on('click', function () {
+	  sortGrades();
 	});
-});
+  });
 
 
 // Sticky Header
 
-window.onscroll = function() {
-	makeSticky();
-};
+window.onscroll = function() { makeSticky(); };
 
 var header = document.getElementById("myHeader");
 var sticky = header.offsetTop;
 
 function makeSticky() {
-	if (window.pageYOffset > sticky) {
-		header.classList.add("sticky");
-	} else {
-		header.classList.remove("sticky");
-	}
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
 }
