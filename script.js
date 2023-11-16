@@ -86,7 +86,22 @@ $(document).ready(function () {
     $('#sortButton').on('click', function () {
 
         // Calls the sortGrades function when the Sort button is clicked
-
+	    
         sortGrades();
     });
 });
+
+// Sticky Header
+
+window.onscroll = function() { makeSticky(); };
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function makeSticky() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
