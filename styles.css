@@ -16,59 +16,59 @@ padding-top: 1%;
 /* Body Background */
 
 .custom-bg-light-gray {
-background-color: #c7bfbf;
+background-color: #b1b0b0;
 }
 
 /* Styles for a general container */
 
-.container { 
-width: 100%;         /* Full width of its parent */
-max-width: 1200px;  /* Maximum width to prevent excessive stretching on larger screens */
-margin: 0 auto;     /* Center the container horizontally */
-position: relative;  /* Enable positioning context for child elements */
-margin-top: 20px;     /* Add space at the top */
-margin-right: 40px;    /* Add space at the right  */
-}
+/* .container { 
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+position: relative;
+margin-top: 20px;
+margin-right: 40px;
+} */
 
 /* Styles for the container that contains the carousel */
 
-.tall-div {
-width: 100%; /* Full width of its parent */ 
-max-width: 1200px; /* Maximum width to prevent excessive stretching on larger screens */
-height: auto;  /* Adjust height based on content */
+/* .tall-div {
+width: 100%;
+max-width: 1200px;
+height: auto;
 display: flex;
 align-items: center; 
 justify-content: center;
-overflow: hidden;/* Hide overflow content */
+overflow: hidden;
 margin-bottom: 50px;
-}
+} */
 
 /* Styles for the footer container */
 
-.footer-container {
+/* .footer-container {
 position: relative;
-z-index: 2; /* Set stacking order, ensuring it appears above other elements */
+z-index: 2;
 margin-top: 20px;
-}
+} */
 
 /* Styles for the carousel*/
 
-#carousel {
-height: 600px; /*setting the height*/
-}
+/* #carousel {
+height: 600px;
+} */
 
 /* Styles for images inside the carousel */
 
-#carousel img {
-width: 100%; /* Ensure images fill the container width */
-height: 100%; /* Ensure images fill the container height */
-object-fit: cover; /* Maintain aspect ratio while covering the container */
-}
+/* #carousel img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+} */
 
 /* Media query for smaller screens (max-width: 768px)
 for both grid cards and the footer container to regress 350px to the top, if the screen becomes smaller*/
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
 #grid-cards {
 position: relative;
 top: -350px;
@@ -78,4 +78,4 @@ top: -350px;
 position: relative;
   top: -350px;
 }
-}
+} */
